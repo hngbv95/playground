@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+#app {
+    display: grid;
+    height: 300px;
+    grid-template-columns: 200px 200px 200px;
+    gap: 10px;
+
+    div {
+        will-change: transform;
+        display: block;
+        background-color: coral; 
+        transition: ease-in 0.3s;
+        &:hover {
+
+            transform: scale(2);
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "web-client",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "konva": "parcel -p 3000 ./konva-test/index.html --no-cache",
+    "perf": "parcel -p 3000 ./perftool/index.html --no-cache",
+    "gql-client": "parcel -p 3000 ./gql-client/index.html --no-cache",
+    "module-pg": "parcel -p 3000 ./module-pg/index.html --no-cache",
+    "worker-as-qp": "parcel -p 3000 ./worker-as-queue-promise/index.html --no-cache",
+    "intercept": "parcel -p 3000 ./intercept/index.html --no-cache",
+    "concurrent": "parcel -p 3000 ./concurrent/index.html --no-cache",
+    "oscanvas": "parcel -p 3000 ./oscanvas/index.html --no-cache",
+    "shared-mem": "parcel -p 3000 ./shared-mem/index.html --no-cache",
+    "anim": "parcel -p 3000 ./anime-api/index.html --no-cache",
+    "build": "parcel build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  },
+  "dependencies": {
+    "konva": "^9.2.1",
+    "lodash": "^4.17.21"
+  }
+}
