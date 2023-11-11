@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Layout - Web Component playground</title>
+    <link rel="stylesheet" rel="preload" as="style" href="styles.css"/>
+    <script type="module" src="app.ts" defer></script>
+  </head>
+  <body>
+    <!-- <fly-text>
+      <h2 slot="message">This is a web component</h2>
+    </fly-text> -->
+    <header>
+      <h2>Parallel Page Layout</h2>
+    </header>
+    <main>
+      <section class="parallax">
+        <h1 class="anim anim-init" data-anim-class="anim-left-slide">Welcome to my page</h1>
+        <h2>And so on</h2>
+      </section>
+      <section>
+        <h1 class="anim anim-init" data-anim-class="anim-left-slide">Welcome to my page</h1>
+        <h2>And so on</h2>
+      </section>
+      <section class="parallax">
+        <h1 class="anim anim-init" data-anim-class="anim-left-slide">Welcome to my page</h1>
+        <h2>And so on</h2>
+      </section>
+    </main>
+  </body>
+</html>

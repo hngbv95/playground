@@ -1,0 +1,11 @@
+/* This is a must when working with slotted element */
+
+@keyframes example {
+    from {color: red;}
+    to {color: yellow;}
+}
+  
+
+section {
+    animation: example 2s alternate-reverse infinite;
+}

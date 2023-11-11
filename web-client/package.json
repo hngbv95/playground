@@ -6,6 +6,7 @@
   "scripts": {
     "konva": "parcel -p 3000 ./konva-test/index.html --no-cache",
     "perf": "parcel -p 3000 ./perftool/index.html --no-cache",
+    "layout-pg": "parcel -p 3000 ./layout-pg/index.html --no-cache",
     "gql-client": "parcel -p 3000 ./gql-client/index.html --no-cache",
     "module-pg": "parcel -p 3000 ./module-pg/index.html --no-cache",
     "worker-as-qp": "parcel -p 3000 ./worker-as-queue-promise/index.html --no-cache",
@@ -20,6 +21,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.9.3",
+    "@parcel/transformer-sass": "^2.9.3",
     "parcel": "^2.9.3"
   },
   "dependencies": {

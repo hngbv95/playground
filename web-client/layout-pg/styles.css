@@ -1,0 +1,38 @@
+@import './animation.scss';
+
+:root {
+    --header-size: 70px
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    display: block;
+    box-sizing: border-box;
+    block-size: var(--header-size);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+}
+
+main {
+    & section {
+        display: grid;
+        place-content: center;
+        background-color: coral;
+        block-size: calc(100vh - var(--header-size));
+        border: 2pt dashed #333;
+        position: sticky;
+        top: var(--header-size);
+        color: whitesmoke;
+
+        & h1 {
+            text-decoration: underline;
+            font-size: 3rem;
+        }
+
+    }
+}

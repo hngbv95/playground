@@ -1,0 +1,26 @@
+@keyframes left-slide {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.anim {
+    will-change: transform, opacity;
+    
+    &-init {
+        opacity: 0;
+    }
+
+    &-left-slide {
+        animation: left-slide cubic-bezier(.37,1.26,.79,1.66) 1s;    
+    }
+}
+
