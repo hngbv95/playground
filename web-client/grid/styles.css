@@ -1,0 +1,92 @@
+:root {
+    --padding-size: 1rem;
+    --content-inline-max: 900px;
+    --breakout-inline-max: 1200px;
+    --outline-style: 3px dashed red;
+    --sidebar-inline-size: 300px;
+
+    --breakout-track-size: calc(
+        (var(--breakout-inline-max) - var(--content-inline-max)) / 2
+    )
+}
+
+body {
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: 0 minmax(0, var(--sidebar-inline-size)) 1fr 0;
+    grid-template-areas: 
+        "header header header header"
+        "aside aside main ."
+        "footer footer footer footer";
+    gap: 2rem;
+
+    & > header {
+        grid-area: header;
+        background-color: coral;
+        & > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            & > nav > ul {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 1rem;
+    
+                &>li {
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+
+    & > aside {
+        outline: var(--outline-style);
+        grid-area: aside;
+    }
+
+    & > main {
+        outline: var(--outline-style);
+        min-block-size: 100vh;
+        grid-area: main;
+    }
+
+    & > footer {
+        padding-inline: 1rem;
+        background-color: aquamarine;
+        grid-area: footer;
+    }
+}
+
+.article-layout {
+    display: grid;
+    grid-template-columns: 
+        [full-width-start] 
+        minmax(var(--padding-size), 1fr)
+        [breakout-start]
+        minmax(0, var(--breakout-track-size))
+        [content-start]
+        min(100% - calc(var(--padding-size) * 2), var(--content-inline-max))
+        [content-end]
+        minmax(0, var(--breakout-track-size))
+        [breakout-end]
+        minmax(var(--padding-size), 1fr)
+        [full-width-end];
+
+        & > :not(.breakout, .full-width) {
+            grid-column: content;
+        }
+
+
+        & > .breakout {
+            grid-column: breakout;
+        }
+
+        & > .full-width {
+            grid-column: full-width;
+        }
+}
+
