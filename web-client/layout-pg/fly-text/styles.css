@@ -1,11 +1,13 @@
 /* This is a must when working with slotted element */
 
 @keyframes example {
-    from {color: red;}
-    to {color: yellow;}
+    0% {color: #F11A7B;}
+    50% {color: #982176;}
+    100% {color: #3E001F;}
 }
   
 
 section {
+    font-weight: bolder;
     animation: example 2s alternate-reverse infinite;
 }

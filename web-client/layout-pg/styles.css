@@ -10,6 +10,8 @@ body {
 }
 
 header {
+    text-align: center;
+    background-color: #FFE5AD;
     display: block;
     box-sizing: border-box;
     block-size: var(--header-size);
