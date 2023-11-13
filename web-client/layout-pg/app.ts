@@ -11,18 +11,16 @@ import './fly-text/controller';
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.querySelectorAll('.anim').forEach(el => {
-                    const htmlEl = <HTMLElement> el;
-                    htmlEl.classList.add(htmlEl.dataset['animClass']!) ;
-                    htmlEl.classList.remove(`anim-init`) ;
-                    htmlEl.removeAttribute('data-anim-class')
-                })
+                const htmlEl = <HTMLElement> entry.target;
+                htmlEl.classList.add(htmlEl.dataset['animClass']!) ;
+                htmlEl.classList.remove(`anim-init`) ;
+                htmlEl.removeAttribute('data-anim-class')
                 observer.unobserve(entry.target)
             }
         })
     }, options)
 
-    const animatedElements = document.querySelectorAll('main section');
+    const animatedElements = document.querySelectorAll('.anim');
     animatedElements.forEach((el) => {
         observer.observe(el)
     })
