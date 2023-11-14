@@ -28,16 +28,62 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
-    
-            & > nav > ul {
-                display: flex;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                gap: 1rem;
-    
-                &>li {
-                    padding: 1rem;
+
+            & > button {
+                font-size: 1rem;
+                background-color: #666;
+                color: aliceblue;
+                padding: 0.5em;
+                border-radius: 10%;
+
+                @media (min-width: 768px) {
+                    display: none;
+                }
+
+                &.show {
+                    position: fixed;
+                    margin-left: 1rem;
+                    inset: auto auto auto 30%;
+                }
+            }
+            
+            & > nav {
+                & > ul {
+                    display: flex;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    gap: 1rem;
+        
+                    &>li {
+                        padding: 1rem;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    position: fixed;
+                    inset: 0 0 0 30%;
+                    background: hsl(0, 0, 100%);
+                    backdrop-filter: blur(30px);
+                    transform: translateX(100%);
+
+                    &.show {
+                        transform: translateX(0);
+                    }
+
+
+                    & > ul {
+                        margin-top: 10vh;
+                        display: flex;
+                        flex-direction: column;
+                        list-style: none;
+                        padding: 0;
+                        gap: 0;
+            
+                        &>li {
+                            padding: 1rem;
+                        }
+                    }
                 }
             }
         }
@@ -79,7 +125,6 @@ body {
         & > :not(.breakout, .full-width) {
             grid-column: content;
         }
-
 
         & > .breakout {
             grid-column: breakout;
