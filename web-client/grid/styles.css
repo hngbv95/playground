@@ -1,35 +1,33 @@
-:root {
-    --padding-size: 1rem;
-    --content-inline-max: 900px;
-    --breakout-inline-max: 1200px;
-    --outline-style: 3px dashed red;
-    --sidebar-inline-size: 300px;
+@import 'root.scss';
+@import 'layout.scss';
 
-    --breakout-track-size: calc(
-        (var(--breakout-inline-max) - var(--content-inline-max)) / 2
-    )
+h1,h2,h3,h4,h5,h6 {
+    text-transform: uppercase;
 }
 
 body {
     margin: 0;
-
-    display: grid;
-    grid-template-columns: 0 minmax(0, var(--sidebar-inline-size)) 1fr 0;
-    grid-template-areas: 
-        "header header header header"
-        "aside aside main ."
-        "footer footer footer footer";
-    gap: 2rem;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.7rem;
+    letter-spacing: 0.5px;
 
     & > header {
-        grid-area: header;
-        background-color: coral;
+        --font-color: var(--theme-light);
+        color: var(--font-color);
+        background: linear-gradient(to right, rgb(7, 102, 173), rgb(197, 232, 152));
+
         & > div {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            & > h2 {
+                max-inline-size: 15rem;
+            }
 
             & > button {
+                transition: var(--sidebar-animation-duration);
                 font-size: 1rem;
                 background-color: #666;
                 color: aliceblue;
@@ -48,6 +46,7 @@ body {
             }
             
             & > nav {
+                transition: var(--sidebar-animation-duration);
                 & > ul {
                     display: flex;
                     list-style: none;
@@ -57,13 +56,14 @@ body {
         
                     &>li {
                         padding: 1rem;
+                        text-transform: uppercase;
                     }
                 }
 
                 @media (max-width: 768px) {
                     position: fixed;
                     inset: 0 0 0 30%;
-                    background: hsl(0, 0, 100%);
+                    background: hsl(0 0% 100% / 0.5);
                     backdrop-filter: blur(30px);
                     transform: translateX(100%);
 
@@ -79,59 +79,22 @@ body {
                         list-style: none;
                         padding: 0;
                         gap: 0;
-            
-                        &>li {
-                            padding: 1rem;
-                        }
                     }
                 }
             }
         }
     }
 
-    & > aside {
-        outline: var(--outline-style);
-        grid-area: aside;
-    }
-
     & > main {
-        outline: var(--outline-style);
-        min-block-size: 100vh;
-        grid-area: main;
+        padding-block: 3rem;
     }
 
     & > footer {
-        padding-inline: 1rem;
-        background-color: aquamarine;
-        grid-area: footer;
+        --font-color: var(--theme-light);
+        color: var(--font-color);
+        background: linear-gradient(to right, rgb(7, 102, 173), rgb(41, 173, 178));
     }
 }
 
-.article-layout {
-    display: grid;
-    grid-template-columns: 
-        [full-width-start] 
-        minmax(var(--padding-size), 1fr)
-        [breakout-start]
-        minmax(0, var(--breakout-track-size))
-        [content-start]
-        min(100% - calc(var(--padding-size) * 2), var(--content-inline-max))
-        [content-end]
-        minmax(0, var(--breakout-track-size))
-        [breakout-end]
-        minmax(var(--padding-size), 1fr)
-        [full-width-end];
 
-        & > :not(.breakout, .full-width) {
-            grid-column: content;
-        }
-
-        & > .breakout {
-            grid-column: breakout;
-        }
-
-        & > .full-width {
-            grid-column: full-width;
-        }
-}
 

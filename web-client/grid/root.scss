@@ -1,0 +1,64 @@
+/* Root & Variables*/
+:root {
+    --padding-size: 1rem;
+    --content-inline-max: 900px;
+    --breakout-inline-max: 1200px;
+    --outline-style: 3px dashed red;
+    --sidebar-inline-size: 300px;
+    --sidebar-animation-duration: 145ms;
+
+    --theme-dark: rgb(7, 102, 173);
+    --theme-light: rgb(243, 243, 243);
+
+    --theme-green: rgb(167, 211, 151);
+    --theme-white: rgb(245, 238, 200);
+
+    --color-black: rgb(51 51 51);
+    --color-white: rgb(51 51 51);
+    
+    --font-color: rgb(51 51 51);
+    --bg-color: rgb(243, 243, 243);
+
+    --breakout-track-size: calc(
+        (var(--breakout-inline-max) - var(--content-inline-max)) / 2
+    )
+}
+
+.bg {
+    --border-radius: 0;
+    --bg-color: var(--theme-dark);
+    --font-color: var(--theme-light);
+
+    color: var(--font-color);
+    position: relative;
+
+    &:hover::before {
+        clip-path: circle(70% at 100% 0);
+    }
+
+    &::before {
+        border-radius: var(--border-radius);
+        content: '';
+        background-color: var(--theme-green);
+        
+        clip-path: circle(0% at 100% 0);
+        transition: 500ms;
+
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+    }
+
+    &::after {
+        border-radius: var(--border-radius);
+        background-color: var(--bg-color);
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+    }
+
+    &.border-rad-20 {
+        --border-radius: 20%;
+    }
+}
