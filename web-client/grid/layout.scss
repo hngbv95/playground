@@ -50,3 +50,74 @@
         grid-area: context;
     }
 }
+
+.parallax {
+    position: relative;
+
+    & > img {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: -1;
+
+        @media (max-width: 768px) {
+            object-fit: cover;
+            height: 100vh;
+        }
+    }
+
+    & > section {
+        --bg-color: rgba(243, 243, 243, 0.9);
+        background-color: var(--bg-color);
+    }
+}
+
+.text-clip {
+    user-select: none;
+    background-image: url('https://special.nhandan.vn/dat-thieng-con-dao/assets/sfvqmxZRGE/2020_07_12_11_44_40_1-1594691630551-jpg-1800x1350.jpg');
+    background-repeat: no-repeat;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    line-height: 1.7em;
+    font-size: clamp(2em, 5vw ,7em);
+}
+
+.bg {
+    --border-radius: 0;
+    --bg-color: var(--theme-dark);
+    --font-color: var(--theme-light);
+
+    color: var(--font-color);
+    position: relative;
+
+    &:hover::before {
+        clip-path: circle(70% at 100% 0);
+    }
+
+    &::before {
+        border-radius: var(--border-radius);
+        content: '';
+        background-color: var(--theme-green);
+        
+        clip-path: circle(0% at 100% 0);
+        transition: 500ms;
+
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+    }
+
+    &::after {
+        border-radius: var(--border-radius);
+        background-color: var(--bg-color);
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+    }
+
+    &.border-rad-20 {
+        --border-radius: 20%;
+    }
+}

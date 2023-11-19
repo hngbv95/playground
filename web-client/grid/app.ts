@@ -8,11 +8,13 @@
     function showMenu() {
         nav!.classList.add('show')
         menuButton.classList.add('show')
+        menuButton.innerHTML = `▶`
     }
 
     function hideMenu() {
         nav!.classList.remove('show')
         menuButton.classList.remove('show')
+        menuButton.innerHTML = `◀`
     }
 
     const btnProxy = new Proxy(menuButtonState, {

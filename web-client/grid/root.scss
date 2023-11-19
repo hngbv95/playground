@@ -1,5 +1,6 @@
 /* Root & Variables*/
 :root {
+    // Config Definition
     --padding-size: 1rem;
     --content-inline-max: 900px;
     --breakout-inline-max: 1200px;
@@ -15,50 +16,14 @@
 
     --color-black: rgb(51 51 51);
     --color-white: rgb(51 51 51);
+
+    --line-height: 1.7em;
     
-    --font-color: rgb(51 51 51);
-    --bg-color: rgb(243, 243, 243);
+    // -- Actual values use 
+    --font-color: var(--color-black);
+    --bg-color: var(--theme-light);
 
     --breakout-track-size: calc(
         (var(--breakout-inline-max) - var(--content-inline-max)) / 2
     )
-}
-
-.bg {
-    --border-radius: 0;
-    --bg-color: var(--theme-dark);
-    --font-color: var(--theme-light);
-
-    color: var(--font-color);
-    position: relative;
-
-    &:hover::before {
-        clip-path: circle(70% at 100% 0);
-    }
-
-    &::before {
-        border-radius: var(--border-radius);
-        content: '';
-        background-color: var(--theme-green);
-        
-        clip-path: circle(0% at 100% 0);
-        transition: 500ms;
-
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-    }
-
-    &::after {
-        border-radius: var(--border-radius);
-        background-color: var(--bg-color);
-        content: '';
-        position: absolute;
-        inset: 0;
-        z-index: -2;
-    }
-
-    &.border-rad-20 {
-        --border-radius: 20%;
-    }
 }
