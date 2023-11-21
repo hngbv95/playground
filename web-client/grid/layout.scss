@@ -76,6 +76,7 @@
     user-select: none;
     background-image: url('https://special.nhandan.vn/dat-thieng-con-dao/assets/sfvqmxZRGE/2020_07_12_11_44_40_1-1594691630551-jpg-1800x1350.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
     background-clip: text;
     color: transparent;
     text-align: center;
@@ -119,5 +120,50 @@
 
     &.border-rad-20 {
         --border-radius: 20%;
+    }
+}
+
+.img-stick {
+    position: sticky;
+    top: 100px;
+    aspect-ratio: 1 / 1.25;
+    object-fit: cover;
+}
+
+.contain-bg-attach {
+    position: relative;
+
+    & > .img-bg-attach {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+
+        &.narrow {
+            --space: 100px;
+
+            position: absolute;
+            width: min(var(--space));
+            aspect-ratio: 1 / 8;
+
+            @media (max-width: 1280px) {
+                margin-bottom: 1rem;
+                position: relative;
+                width: 100%;
+                aspect-ratio: 2 / 1;
+            }
+
+            @media (min-width: 1280px) {
+                &.left {
+                    top: 0;
+                    left: 5vw;
+                }
+    
+                &.right {
+                    top: 0;
+                    right: 5vw;
+                }
+            }
+        }
     }
 }
