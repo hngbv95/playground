@@ -12,7 +12,6 @@ import css from 'bundle-text:./styles.css'
 
     customElements.define('fly-text',
         class extends HTMLElement {
-            animationRequestId: any
             slotContent: any
 
             constructor() {
@@ -25,6 +24,18 @@ import css from 'bundle-text:./styles.css'
             connectedCallback() {
                 console.log('connected')
                 const self = this
+                const section = self.shadowRoot?.querySelector("section")
+                // Query all child element which are not slot placeholder
+                const childElements = Array.from(self.querySelectorAll(':not(:is([slot]))'))
+                console.log(childElements)
+                console.log(section)
+                console.log(self)
+
+                // BEWARE: This one actually moves elements into the shadow root.
+                // Not sure any side effect like trigger re-render layout or any performance issues
+                childElements.forEach(item => {
+                    section?.appendChild(item)
+                })
             }
         }
     )

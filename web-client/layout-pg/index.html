@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8"/>
     <title>Layout - Web Component playground</title>
-    <link rel="stylesheet" rel="preload" as="style" href="styles.css"/>
+    <!-- <link rel="stylesheet" rel="preload" as="style" href="styles.css"/> -->
+    <style>
+      @import './styles.css';
+    </style>
     <script type="module" src="app.ts" defer></script>
   </head>
   <body>
@@ -13,6 +16,7 @@
     <header>
       <fly-text>
       <h2 slot="message">ööö A Web Component Title ööö</h2>
+      <h2>ööö A Web Component Title ööö</h2>
     </fly-text>
     </header>
     <main>
