@@ -1,4 +1,12 @@
 import { useTextContext } from '../contexts/text'
+import { memo } from 'react'
+
+function ChildComponent() {
+    console.log('Child Component')
+    return <h2>This is a ChildComponent</h2>
+}
+
+const ChildComponentMemo = memo(ChildComponent)
 
 export function Text() {
     const { setValue } = useTextContext()
@@ -13,6 +21,10 @@ export function Text() {
 export function TextDisplay() {
     const { value } = useTextContext()
     return (
-        <h1>{value}</h1>
+        <>
+            <h1>{value}</h1>
+            <ChildComponentMemo></ChildComponentMemo>
+        </>
+        
     );
 }
