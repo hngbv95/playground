@@ -1,0 +1,97 @@
+.layout-grid-col {
+    --content-width: var(--size-xl);
+    --padding-size: var(--size-3);
+
+    display: grid;
+    grid-template-columns: 
+        [full-start]
+        minmax(var(--padding-size), 1fr)
+        [content-start]
+        min(100% - calc(var(--padding-size)*2), var(--content-width))
+        [content-end]
+        minmax(var(--padding-size), 1fr)
+        [full-end]
+    ;
+
+    & > * {
+        border: 1px red dashed;
+        grid-column: content;
+    }
+
+    /* This is how to custom
+    &.custom {
+        --content-width: var(--size-lg);
+        --padding-size: var(--size-6);
+
+        background-color: var(--red-6);
+        padding-block: var(--size-3);
+    } */
+
+    &.full {
+        --content-width: 100%;
+        --padding-size: 0px;
+    }
+
+    &.bg-indigo {
+        background-color: var(--indigo-11);
+    }
+}
+
+/* seem like we can achieve the same thing with flex */
+.layout-flex-col {
+    --content-width: var(--size-xl);
+    --padding-inline-size: var(--size-3);
+    --padding-block-size: var(--size-6);
+
+    background-color: var(--gradient-13);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    padding-block: var(--padding-block-size);
+
+    & > * {
+        inline-size: min(100% - (var(--padding-inline-size)*2), var(--content-width));
+        outline: 1px dashed red;
+    }
+
+    /* This is how to custom
+    &.custom {
+        --content-width: var(--size-sm);
+    } */
+}
+
+.layout-grid-row {
+    --content-width: var(--size-relative-15);
+    --gap-size: var(--size-6);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--content-width), 1fr));
+    gap: var(--gap-size);
+
+    /* This is how to custom
+    &.custom {
+        --content-width: var(--size-sm);
+    } */
+}
+
+.just-block {
+    --content-width: var(--size-xl);
+    --padding-size: var(--size-3);
+
+    padding-inline: max(var(--padding-size), calc((100% - var(--content-width)) / 2));
+    background: var(--gradient-2);
+    
+
+    & > * {
+        background: hsl(var(--gray-2-hsl) / 30%);
+        /* outline: 1px dashed red; */
+        font-weight: var(--font-weight-3);
+        letter-spacing: var(--font-letterspacing-2);
+    }
+}
+
+/*Use with container query*/
+.container {
+    container-type: inline-size;
+}

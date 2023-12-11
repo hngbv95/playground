@@ -6,6 +6,7 @@
   "scripts": {
     "konva": "parcel -p 3000 ./konva-test/index.html --no-cache",
     "perf": "parcel -p 3000 ./perftool/index.html --no-cache",
+    "react-pg": "parcel -p 3000 ./react-pg/index.html --no-cache",
     "oprop": "parcel -p 3000 ./oprop/index.html --no-cache",
     "grid": "parcel -p 3000 ./grid/index.html --no-cache",
     "layout-pg": "parcel -p 3000 ./layout-pg/index.html --no-cache",
@@ -28,8 +29,12 @@
     "parcel": "^2.9.3"
   },
   "dependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
     "konva": "^9.2.1",
     "lodash": "^4.17.21",
-    "open-props": "^1.6.13"
+    "open-props": "^1.6.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

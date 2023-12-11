@@ -1,0 +1,98 @@
+@import "npm:open-props/open-props.min.css";
+@import "npm:open-props/normalize.min.css";
+@import "npm:open-props/buttons.min.css";
+@import "layout.css";
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: var(--purple-4);
+}
+
+.card {
+  display: block;
+  aspect-ratio: var(--ratio-square);
+  /* background-image: var(--gradient-1); */
+  border-radius: var(--radius-blob-4);
+  box-shadow: var(--shadow-6);
+
+  & > h1 {
+    text-align: start;
+    line-height: var(--font-lineheight-5);
+  }
+}
+
+/* Parent must have class container */
+.card-grid {
+  --visual-size: 40%;
+  --content-size: 1fr;
+  --gap-size: var(--size-6);
+  --padding-size: var(--size-3);
+
+  padding: var(--padding-size);
+  & > .visual {
+      aspect-ratio: var(--ratio-square);
+  }
+
+  & > .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @container (width >= 500px) {
+      & {
+          display: grid;
+          grid-template-columns: var(--visual-size) var(--content-size);
+          align-content: start;
+          gap: var(--gap-size);
+          text-align: left;
+      }
+  }
+}
+
+.slider {
+  --standard-ratio: 16 / 9;
+  display: flex;
+  overflow-x: auto;
+  touch-action: pan-x;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+
+  & > * {
+    width: 100%;
+    aspect-ratio: var(--standard-ratio);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+}
+
+.stories {
+  inline-size: 100vw;
+  block-size: 100vh;
+
+  display: grid;
+  grid: 1fr / auto-flow 100%;
+  gap: 1ch;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior: contain;
+  touch-action: pan-x;
+  & > * {
+    width: 100%;
+    margin: 1p0x;
+    aspect-ratio: var(--standard-ratio);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+
+  @media (hover: hover) and (min-width: 480px) {
+    max-inline-size: 480px;
+    max-block-size: 848px;
+  }
+}
