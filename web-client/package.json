@@ -6,6 +6,7 @@
   "scripts": {
     "konva": "parcel -p 3000 ./konva-test/index.html --no-cache",
     "perf": "parcel -p 3000 ./perftool/index.html --no-cache",
+    "oprop": "parcel -p 3000 ./oprop/index.html --no-cache",
     "grid": "parcel -p 3000 ./grid/index.html --no-cache",
     "layout-pg": "parcel -p 3000 ./layout-pg/index.html --no-cache",
     "gql-client": "parcel -p 3000 ./gql-client/index.html --no-cache",
@@ -16,7 +17,7 @@
     "oscanvas": "parcel -p 3000 ./oscanvas/index.html --no-cache",
     "shared-mem": "parcel -p 3000 ./shared-mem/index.html --no-cache",
     "anim": "parcel -p 3000 ./anime-api/index.html --no-cache",
-    "build": "parcel build",
+    "build": "parcel build ./oprop/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "konva": "^9.2.1",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "open-props": "^1.6.13"
   }
 }
