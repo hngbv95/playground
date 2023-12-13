@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" color-scheme="teal">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>View Transition</title>
+    <link rel="stylesheet" rel="preload" as="style" href="styles.css"/>
+    <script type="module" src="app.ts" defer></script>
+  </head>
+  <body>
+    <header class="just-block">
+      <div class="flex">
+        <h2>This is the page Title</h2>
+      </div>
+    </header>
+    <main class="just-block">
+      <section>
+        <h1>View Transition API is available in <u>chrome only</u></h1>
+        <p>This is a demo to show how it works</p>
+      </section>
+      <section>
+        <h2>Change theme</h2>
+        <form id="theme">
+          <h3 class="flex start"><input id="teal" checked type="radio" name="theme" value="teal"><label for="teal">Teal</label></h3>
+          <h3 class="flex start"><input id="purple" type="radio" name="theme" value="purple"><label for="purple">Purple</label></h3>
+        </form>
+      </section>
+    </main>
+    <footer class="just-block">
+      <h2>This is the page Footer</h2>
+    </footer>
+  </body>
+</html>

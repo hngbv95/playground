@@ -6,6 +6,7 @@
   "scripts": {
     "konva": "parcel -p 3000 ./konva-test/index.html --no-cache",
     "perf": "parcel -p 3000 ./perftool/index.html --no-cache",
+    "view-transit": "parcel -p 3000 ./view-transit/index.html --no-cache",
     "react-pg": "parcel -p 3000 ./react-pg/index.html --no-cache",
     "oprop": "parcel -p 3000 ./oprop/index.html --no-cache",
     "grid": "parcel -p 3000 ./grid/index.html --no-cache",

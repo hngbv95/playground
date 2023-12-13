@@ -1,0 +1,77 @@
+@import "npm:open-props/open-props.min.css";
+@import "npm:open-props/normalize.min.css";
+@import "npm:open-props/buttons.min.css";
+@import "layout.css";
+
+html {
+  height: 100%;
+
+  /*TEAL Color scheme*/
+  --brand-teal: var(--teal-6);
+
+  --text-1-teal: var(--teal-6);
+  --text-2-teal: var(--gray-7);
+
+  --surface-1-teal: var(--gray-1);
+  --surface-2-teal: var(--gray-2);
+  --surface-3-teal: var(--gray-3);
+  --surface-4-teal: var(--gray-4);
+
+  /*PURPLE Color scheme*/
+  --brand-purple: var(--purple-6);
+
+  --text-1-purple: var(--purple-3);
+  --text-2-purple: var(--gray-7);
+
+  --surface-1-purple: var(--sand-8);
+  --surface-2-purple: var(--gray-9);
+  --surface-3-purple: var(--gray-10);
+  --surface-4-purple: var(--gray-11);
+}
+
+body {
+  min-height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  padding-block: var(--size-8);
+}
+
+input[type="radio"] {
+  margin-inline-end: var(--size-3);
+}
+
+
+/* Prevent the default animation*/
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+[color-scheme="teal"] {
+  --brand: var(--brand-teal);
+
+  --text-1: var(--text-1-teal);
+  --text-2: var(--text-2-teal);
+
+  --surface-1: var(--surface-1-teal);
+  --surface-2: var(--surface-2-teal);
+  --surface-3: var(--surface-3-teal);
+  --surface-4: var(--surface-4-teal);
+}
+
+[color-scheme="purple"] {
+  --brand: var(--brand-purple);
+
+  --text-1: var(--text-1-purple);
+  --text-2: var(--text-2-purple);
+
+  --surface-1: var(--surface-1-purple);
+  --surface-2: var(--surface-2-purple);
+  --surface-3: var(--surface-3-purple);
+  --surface-4: var(--surface-4-purple);
+}
