@@ -75,3 +75,19 @@ input[type="radio"] {
   --surface-3: var(--surface-3-purple);
   --surface-4: var(--surface-4-purple);
 }
+
+.square {
+  inline-size: var(--size-xs);
+  background: var(--gradient-1);
+  border-radius: var(--radius-5);
+  aspect-ratio: var(--ratio-square);
+  view-transition-name: square;
+
+  &[color-scheme="purple"] {
+    background: var(--gradient-3);
+    border-radius: var(--radius-round);
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+}

@@ -1,4 +1,5 @@
 const sw = document.getElementById("theme");
+const sq = document.getElementById("square");
 const root = document.documentElement;
 
 let lastClick: MouseEvent | TouchEvent | any
@@ -22,11 +23,13 @@ function setTheme(theme) {
 
     if (!document.startViewTransition) {
         root.setAttribute('color-scheme', theme);
+        sq.setAttribute('color-scheme', theme);
         return;
     }
 
     const transition = document.startViewTransition(() => {
         root.setAttribute('color-scheme', theme);
+        sq.setAttribute('color-scheme', theme);
     })
 
     transition.ready.then(() => {
