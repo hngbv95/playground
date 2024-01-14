@@ -8,7 +8,22 @@
     <script type="module" src="app.ts" defer></script>
   </head>
   <body>
-    <div class="square"></div>
+    <form id="change-state" novalidate action="/">
+      <input type="radio" id="first" name="state" value="first" checked><label for="first">First</label>
+      <input type="radio" id="second" name="state" value="second"><label for="second">Second</label>
+      <input type="text" value="Hung">
+      <div contenteditable="true" name="state">This is a div, not an input</div>
+      <div contenteditable="">
+        <div>first</div>
+        <div>second</div>
+      </div>
+    </form>
+    <div id="grid-transit-area" state="first">
+      <div></div>
+    </div>
+    <div class="square-demo"></div>
+    <input id="control" name="check" type="checkbox" onchange="console.log(this.checked)">
+    <div class="square-demo"></div>
     <header class="layout-grid-col">
       <div>
         <h2>This is the page Title</h2>

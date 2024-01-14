@@ -148,3 +148,47 @@ body {
     transform: scale(1);
   }
 }
+
+#grid-transit-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 1rem;
+
+  > * {
+    background: var(--gradient-1);
+    transition: 200ms;
+  }
+
+  &[state="first"] {
+    > * {
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+    }
+  }
+
+  /* seems like grid area is not effected by transition */
+  &[state="second"] {
+    > * {
+      grid-column: 3 / 3;
+      grid-row: 2 / 2;
+    }
+  }
+  
+}
+
+.square-demo {
+  --bgimage: var(--gradient-2);
+
+  inline-size: var(--size-md);
+  aspect-ratio: var(--ratio-square);
+  transition: 200ms;
+  background: var(--bgimage);
+}
+
+/*Select next Element
++ Select prev Element */
+#control:checked + .square-demo,
+.square-demo:has(+ #control:checked) {
+  --bgimage: var(--gradient-1);
+}
